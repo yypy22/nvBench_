@@ -1,0 +1,631 @@
+#1
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT DATE_TRUNC('weekday', Date_in_Location_From) as date_weekday, COUNT(Date_in_Location_From) as count_doc FROM Document_locations GROUP BY date_weekday ORDER BY count_doc DESC",
+      "dbname": "cre_Doc_Tracking_DB"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "date_weekday",
+      "type": "nominal",
+      "title": "Date in Location From (Weekday)"
+    },
+    "y": {
+      "field": "count_doc",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "title": "Count of Date in Location From",
+      "sort": {"op": "descending"}
+    },
+    "color": {
+      "value": "#4472C4"
+    }
+  }
+}
+#2
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "films",
+    "source": {
+      "sql": "SELECT Title, MAX(price) as max_price FROM schedule JOIN film ON schedule.film_id = film.film_id GROUP BY Title"
+    },
+    "format": {
+      "type": "json",
+      "property": "data"
+    },
+    "transform": [
+      {
+        "calculate": "datum.max_price",
+        "as": "value"
+      }
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {
+      "field": "value",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "title": "Maximum Price"
+    },
+    "color": {
+      "field": "Title",
+      "type": "nominal",
+      "title": "Title"
+    }
+  },
+  "title": {
+    "text": "Maximum Price of Each Film by Title",
+    "subtitle": "(Interactive Pie Chart)"
+  }
+}
+#3
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "storm_data",
+    "source": {
+      "sql": "SELECT Name, COUNT(*) as num_affected_regions FROM storm JOIN affected_region ON storm.storm_id = affected_region.storm_id GROUP BY storm.storm_id"
+    },
+    "format": {
+      "type": "json",
+      "property": "data"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Name",
+      "type": "nominal",
+      "title": "Storm Name"
+    },
+    "y": {
+      "field": "num_affected_regions",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "title": "Number of Affected Regions"
+    },
+    "color": {
+      "value": "#4472C4"
+    }
+  },
+  "title": {
+    "text": "Number of Affected Regions by Storm Name",
+    "subtitle": "(Interactive Bar Chart)"
+  }
+}
+#4
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "technician_data",
+    "source": {
+      "sql": "SELECT Name, COUNT(*) as num_repairs FROM technician WHERE Team != 'NYY' GROUP BY Name ORDER BY Name ASC"
+    },
+    "format": {
+      "type": "json",
+      "property": "data"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Name",
+      "type": "nominal",
+      "title": "Technician Name",
+      "sort": {"field": "Name", "op": "ascending"}
+    },
+    "y": {
+      "field": "num_repairs",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "title": "Number of Repairs"
+    },
+    "color": {
+      "value": "#4472C4"
+    }
+  },
+  "title": {
+    "text": "Number of Repairs by Technician Name (Excluding 'NYY' Team)",
+    "subtitle": "(Interactive Bar Chart)"
+  }
+}
+#5
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "swimmer_data",
+    "source": {
+      "sql": "SELECT meter_500, ID FROM swimmer ORDER BY meter_500 DESC"
+    },
+    "format": {
+      "type": "json",
+      "property": "data"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "meter_500",
+      "type": "temporal",
+      "title": "Meter 500 Time",
+      "scale": {"zero": false},
+      "sort": {"op": "descending"}
+    },
+    "y": {
+      "field": "ID",
+      "type": "nominal",
+      "title": "Swimmer ID"
+    },
+    "color": {
+      "value": "#4472C4"
+    }
+  },
+  "title": {
+    "text": "Distribution of Swimmer IDs by Meter 500 Time (Descending Order)",
+    "subtitle": "(Interactive Bar Chart)"
+  }
+}
+#6
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "products_data",
+    "source": {
+      "sql": "SELECT product_type_code, MAX(product_price) as max_price FROM products GROUP BY product_type_code ORDER BY product_type_code DESC"
+    },
+    "format": {
+      "type": "json",
+      "property": "data"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "product_type_code",
+      "type": "nominal",
+      "title": "Product Type Code",
+      "sort": {"op": "descending"}
+    },
+    "y": {
+      "field": "max_price",
+      "type": "quantitative",
+      "title": "Maximum Product Price",
+      "scale": {"zero": false}
+    },
+    "color": {
+      "value": "#4472C4"
+    }
+  },
+  "title": {
+    "text": "Maximum Product Price by Product Type Code (Descending Order)",
+    "subtitle": "(Interactive Bar Chart)"
+  }
+}
+#7
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT sum(Population) as population, avg(LifeExpectancy) as avg_life_expectancy FROM country WHERE avg(LifeExpectancy) < 72 GROUP BY Continent",
+      "dbsource": "world_1"
+    }
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "aggregate": "sum",
+      "field": "Population",
+      "type": "quantitative"
+    },
+    "y": {
+      "aggregate": "average",
+      "field": "LifeExpectancy",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Continent",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "Continent",
+        "type": "nominal"
+      },
+      {
+        "aggregate": "sum",
+        "field": "Population",
+        "type": "quantitative"
+      },
+      {
+        "aggregate": "average",
+        "field": "LifeExpectancy",
+        "type": "quantitative"
+      }
+    ]
+  }
+}
+#8
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT last_name, COUNT(*) as count FROM people GROUP BY last_name ORDER BY last_name DESC",
+      "dbsource": "student_assessment"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "last_name",
+      "type": "nominal",
+      "sort": {"op": "descending", "field": "last_name"}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "count",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "last_name",
+        "type": "nominal"
+      },
+      {
+        "aggregate": "sum",
+        "field": "count",
+        "type": "quantitative"
+      }
+    ]
+  }
+}
+#9
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT T1.Name, T1.Price, T2.Headquarter FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer = T2.code GROUP BY T1.Name, T2.Headquarter ORDER BY T1.Name DESC",
+      "dbsource": "manufactory_1"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Name",
+      "type": "nominal",
+      "sort": {"op": "descending", "field": "Name"}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Price",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Headquarter",
+      "type": "nominal"
+    },
+    "order": {
+      "field": "Price",
+      "type": "quantitative",
+      "sort": {"op": "descending"}
+    }
+  },
+  "layer": [
+    {
+      "encoding": {
+        "y": {
+          "aggregate": "sum",
+          "field": "Price",
+          "type": "quantitative",
+          "stack": "zero"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
+#10
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT YEAR(Creation) as Creation, SUM(Budget_in_Billions) as budget FROM department GROUP BY YEAR(Creation) ORDER BY Creation",
+      "dbsource": "department_management"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "Creation",
+      "type": "temporal",
+      "timeUnit": "year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "budget",
+      "type": "quantitative"
+    }
+  }
+}
+#11
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT YEAR(year) as year, COUNT(*) as count FROM postseason AS T1 JOIN team AS T2 ON T1.team_id_winner = T2.team_id_br WHERE T2.name = 'Boston Red Stockings' GROUP BY YEAR(year) ORDER BY year",
+      "dbsource": "baseball_1"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "timeUnit": "year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "count",
+      "type": "quantitative"
+    }
+  }
+}
+#12
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT YEAR(year) as year, SUM(count(*)) as count FROM postseason AS T1 JOIN team AS T2 ON T1.team_id_winner = T2.team_id_br WHERE T2.name = 'Boston Red Stockings' GROUP BY YEAR(year) ORDER BY year",
+      "dbsource": "baseball_1"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "timeUnit": "year"
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "count",
+      "type": "quantitative"
+    }
+  }
+}
+#13
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT product_name, COUNT(*) as count FROM products WHERE product_price > 1000 OR product_price < 500 GROUP BY product_name ORDER BY product_name",
+      "dbsource": "customers_and_products_contacts"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "product_name",
+      "type": "nominal",
+      "sort": {"op": "ascending"}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "count",
+      "type": "quantitative"
+    }
+  }
+}
+#14
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT Product_Type_Code, COUNT(*) as count FROM Products GROUP BY Product_Type_Code",
+      "dbsource": "solvency_ii"
+    }
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Product_Type_Code",
+      "type": "nominal"
+    }
+  }
+}
+#15
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT DAYNAME(Document_Date) as day_of_week, COUNT(*) as count FROM Documents AS T1 JOIN projects AS T2 ON T1.project_id = T2.project_id WHERE T2.project_details = 'Graph Database project' GROUP BY DAYNAME(Document_Date) ORDER BY count DESC",
+      "dbsource": "cre_Docs_and_Epenses"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "day_of_week",
+      "type": "nominal",
+      "sort": null
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "sort": {"op": "descending"}
+    }
+  }
+}
+#16
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "data",
+    "source": {
+      "sql": "SELECT EXTRACT(YEAR FROM date_address_from) as year, other_details, SUM(monthly_rental) as total_rental FROM Student_Addresses GROUP BY year, other_details ORDER BY year, total_rental DESC",
+      "dbsource": "behavior_monitoring"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "temporal",
+      "timeUnit": "year",
+      "axis": {
+        "title": "Year",
+        "format": "%Y"
+      }
+    },
+    "y": {
+      "field": "total_rental",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "axis": {
+        "title": "Total Monthly Rental",
+        "format": "$0,0"
+      }
+    },
+    "color": {
+      "field": "other_details",
+      "type": "nominal",
+      "legend": {
+        "title": "Accommodation Type"
+      }
+    },
+    "order": {
+      "field": "total_rental",
+      "sort": "descending"
+    }
+  }
+}
+#17
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT T1.Name, T1.Code, T2.Headquarter FROM products AS T1 JOIN Manufacturers AS T2 ON T1.manufacturer = T2.code GROUP BY T1.Name, T2.Headquarter ORDER BY T1.Name DESC",
+      "dbsource": "manufactory_1"
+    }
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "Name",
+      "type": "nominal",
+      "sort": {"op": "descending"}
+    },
+    "y": {
+      "field": "Code",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    "color": {
+      "field": "Headquarter",
+      "type": "nominal",
+      "legend": null
+    },
+    "order": {
+      "field": "Code",
+      "type": "quantitative",
+      "sort": {"op": "descending"}
+    }
+  }
+}
+#18
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT T1.Participant_ID, T1.Participant_Type_Code, COUNT(*) as count FROM Participants AS T1 JOIN Participants_in_Events AS T2 ON T1.Participant_ID = T2.Participant_ID GROUP BY T1.Participant_ID, T1.Participant_Type_Code",
+      "dbsource": "local_govt_in_alabama"
+    }
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "Participant_ID",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "aggregate": "sum"
+    },
+    "color": {
+      "field": "Participant_Type_Code",
+      "type": "nominal",
+      "legend": {
+        "title": "Participant Type"
+      }
+    },
+    "shape": {
+      "value": "circle"
+    },
+    "size": {
+      "value": 100
+    }
+  }
+}
+#19
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "employees",
+    "source": {
+      "sql": "SELECT HIRE_DATE, DEPARTMENT_ID FROM employees WHERE salary BETWEEN 8000 AND 12000 AND commission_pct != 'null' OR department_id != 40 ORDER BY HIRE_DATE ASC"
+    },
+    "transform": [
+      {"fold": ["DEPARTMENT_ID"], "as": ["department", "value"]}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "HIRE_DATE", "type": "temporal", "timeUnit": "yearmonthdate"},
+    "y": {"field": "value", "type": "quantitative"},
+    "color": {"field": "department", "type": "nominal"}
+  }
+}
+#20
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "name": "table",
+    "source": {
+      "sql": "SELECT year, semester, count(*) as count FROM SECTION GROUP BY year, semester",
+      "dbsource": "college_2"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "timeUnit": "year"},
+    "y": {"field": "count", "type": "quantitative"},
+    "color": {"field": "semester", "type": "nominal"}
+  }
+}

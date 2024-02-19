@@ -1,0 +1,700 @@
+#1
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/Document_locations",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "aggregate",
+        "groupby": ["Date_in_Location_From"],
+        "count": "Date_in_Location_From"
+      },
+      {
+        "type": "timeunit",
+        "field": "Date_in_Location_From",
+        "unit": "weekday",
+        "title": "Day of the Week"
+      },
+      {
+        "type": "sort",
+        "field": "count",
+        "operation": "descending"
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "timeUnit": "weekday",
+      "field": "Date_in_Location_From",
+      "title": "Day of the Week",
+      "axis": {
+        "labelAngle": 0,
+        "format": "short"
+      }
+    },
+    "y": {
+      "aggregate": "count",
+      "field": "Date_in_Location_From",
+      "title": "Number of Documents"
+    }
+  },
+  "height": 400,
+  "width": 600
+}
+
+#2
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Pie chart showing the maximum price for each title",
+  "data": {
+    "values": [
+      {
+        "Title": "The Case of the Mystery Weekend",
+        "max_price": 15.99
+      },
+      {
+        "Title": "The Case of the Smart Dummy",
+        "max_price": 12.99
+      },
+      {
+        "Title": "The Case: Off the Record",
+        "max_price": 8.99
+      },
+      {
+        "Title": "The Case of the Bermuda Triangle",
+        "max_price": 9.99
+      },
+      {
+        "Title": "The Case of the Piggy Banker",
+        "max_price": 12.99
+      }
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {
+      "field": "max_price",
+      "type": "quantitative",
+      "stack": true,
+      "title": "Maximum Price"
+    },
+    "color": {
+      "field": "Title",
+      "type": "nominal",
+      "title": "Title"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
+#3
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/storm_record",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "groupby",
+        "groupby": ["Name"],
+        "aggregate": [{"op": "count", "field": "storm_id", "as": "num_affected_regions"}]
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Name", "type": "nominal", "title": "Storm Name"},
+    "y": {"field": "num_affected_regions", "type": "quantitative", "title": "Number of Affected Regions"}
+  },
+  "height": 500,
+  "width": 700
+}
+#4
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/machine_repair",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "filter",
+        "expr": "datum.Team != 'NYY'"
+      },
+      {
+        "type": "groupby",
+        "groupby": ["Name"],
+        "aggregate": [{"op": "count", "field": "Name", "as": "count"}]
+      },
+      {
+        "type": "sort",
+        "field": "Name",
+        "order": "ascending"
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Name", "type": "nominal", "title": "Technician Name"},
+    "y": {"field": "count", "type": "quantitative", "title": "Number of Technicians"}
+  },
+  "height": 500,
+  "width": 700
+}
+#5
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/swimming",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "sort",
+        "field": "meter_500",
+        "order": "descending"
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "meter_500", "type": "quantitative", "title": "meter_500"},
+    "y": {"field": "ID", "type": "ordinal", "title": "ID"}
+  },
+  "height": 600,
+  "width": 800
+}
+#6
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/department_store",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "groupby",
+        "groupby": ["product_type_code"],
+        "aggregate": [{"op": "max", "field": "product_price", "as": "max_price"}],
+        "sort": [{"field": "product_type_code", "order": "descending"}]
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "product_type_code", "type": "nominal", "title": "Product Type Code"},
+    "y": {"field": "max_price", "type": "quantitative", "title": "Maximum Product Price"}
+  },
+  "height": 400,
+  "width": 600
+}
+#7
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/world_1",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "groupby",
+        "groupby": ["Continent"],
+        "aggregate": [
+          {"op": "sum", "field": "Population", "as": "sum_Population"},
+          {"op": "mean", "field": "LifeExpectancy", "as": "avg_LifeExpectancy"}
+        ],
+        "filter": "datum.avg_LifeExpectancy < 72"
+      }
+    ]
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "sum_Population", "type": "quantitative", "title": "Sum of Population"},
+    "y": {"field": "avg_LifeExpectancy", "type": "quantitative", "title": "Average Life Expectancy"},
+    "color": {"field": "Continent", "type": "nominal", "title": "Continent"}
+  },
+  "height": 600,
+  "width": 800
+}
+#8
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/student_assessment",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "groupby",
+        "groupby": ["last_name"],
+        "aggregate": [{"op": "count", "field": "last_name", "as": "count"}],
+        "sort": [{"field": "last_name", "order": "descending"}]
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "last_name", "type": "nominal", "title": "Last Name"},
+    "y": {"field": "count", "type": "quantitative", "title": "Total Number of Last Names"}
+  },
+  "height": 600,
+  "width": 800
+}
+#9
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/manufactory_1_stacked",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "stack",
+        "groupby": ["Headquarter"],
+        "sort": {"field": "Name", "order": "ascending"}
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Headquarter", "type": "nominal", "title": "Headquarter"},
+    "y": {"field": "Price", "type": "quantitative", "title": "Price", "stack": true},
+    "color": {"field": "Name", "type": "nominal", "title": "Product Name"},
+    "order": {"field": "Name", "order": "ascending"}
+  },
+  "height": 600,
+  "width": 800
+}
+
+#10
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/department_management",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "bin",
+        "field": "Creation",
+        "bins": 11,
+        "as": "Creation_year"
+      },
+      {
+        "type": "groupby",
+        "groupby": ["Creation_year"],
+        "aggregate": [{"op": "sum", "field": "Budget_in_Billions", "as": "sum_Budget_in_Billions"}],
+        "sort": {"field": "Creation_year", "order": "ascending"}
+      }
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Creation_year", "type": "temporal", "title": "Creation Year"},
+    "y": {"field": "sum_Budget_in_Billions", "type": "quantitative", "title": "Sum of Budget in Billions"},
+    "order": {"field": "Creation_year", "order": "ascending"}
+  },
+  "height": 500,
+  "width": 800
+}
+
+#11
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/baseball_1",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "type": "bin",
+        "field": "year",
+        "bins": 11,
+        "as": "year_bin",
+        "extent": {
+          "min": 1903,
+          "max": 2013
+        }
+      },
+      {
+        "type": "groupby",
+        "groupby": ["year_bin"],
+        "aggregate": [{"op": "count", "field": "year", "as": "count_year"}],
+        "sort": {"field": "year_bin", "order": "ascending"}
+      }
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year_bin", "type": "temporal", "title": "Year", "axis": {"format": "year"}},
+    "y": {"field": "count_year", "type": "quantitative", "title": "Frequency"},
+    "order": {"field": "year_bin", "order": "ascending"}
+  },
+  "height": 500,
+  "width": 800
+}
+
+#12
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"year": 1903, "count": 2},
+      {"year": 1914, "count": 3},
+      {"year": 1915, "count": 0},
+      {"year": 1916, "count": 0},
+      {"year": 1917, "count": 0},
+      {"year": 1918, "count": 0},
+      {"year": 1920, "count": 1},
+      {"year": 1921, "count": 1},
+      {"year": 1922, "count": 1},
+      {"year": 1948, "count": 1},
+      {"year": 1967, "count": 1},
+      {"year": 1975, "count": 1},
+      {"year": 1986, "count": 1},
+      {"year": 2004, "count": 1},
+      {"year": 2007, "count": 1},
+      {"year": 2013, "count": 1}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "year", "type": "temporal", "title": "Year", "axis": {"format": "year"}},
+    "y": {"field": "count", "type": "quantitative", "title": "Number of Wins"}
+  },
+  "height": 500,
+  "width": 800
+}
+
+#13
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/customers_and_products_contacts",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "filter": "datum.product_price > 1000 || datum.product_price < 500",
+        "groupby": ["product_name"],
+        "aggregate": [{"op": "count", "field": "product_name", "as": "count_product_name"}],
+        "sort": {"field": "product_name", "order": "ascending"}
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "product_name", "type": "nominal", "title": "Product Name"},
+    "y": {"field": "count_product_name", "type": "quantitative", "title": "Number of Products"}
+  },
+  "height": 500,
+  "width": 800
+}
+
+#14
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/solvency_ii",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "groupby": ["Product_Type_Code"],
+        "aggregate": [{"op": "count", "field": "*", "as": "count_products"}],
+        "sort": {"field": "Product_Type_Code", "order": "ascending"}
+      }
+    ]
+  },
+  "mark": "pie",
+  "encoding": {
+    "theta": {"field": "count_products", "type": "quantitative", "stack": true, "title": "Number of Products"},
+    "column": {"field": "Product_Type_Code", "type": "nominal", "title": "Product Type Code"},
+    "order": {"field": "Product_Type_Code", "order": "ascending"}
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "title": {
+      "anchor": "start",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "dx": 20
+    }
+  }
+}
+
+#15
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/cre_Docs_and_Expenses",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "filter": "datum",
+        "groupby": ["Document_Date"],
+        "aggregate": [{"op": "count", "field": "Document_Date", "as": "count_document_date"}],
+        "sort": [{"field": "count_document_date", "order": "descending"}],
+        "bin": {"field": "Document_Date", "bins": 7, "as": "weekday"}
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "weekday",
+      "type": "ordinal",
+      "title": "Weekday",
+      "scale": {
+         "domain": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] }
+      },
+    "y": {"field": "count_document_date", "type": "quantitative", "title": "Number of Documents"}
+  }
+}
+
+#16
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/behavior_monitoring",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "groupby": ["other_details"],
+        "aggregate": [
+          {"op": "sum", "field": "monthly_rental", "as": "sum_monthly_rental"}
+        ],
+        "bin": {"field": "date_address_from", "bins": 2, "as": "year"},
+        "sort": [{"field": "sum_monthly_rental", "order": "descending"}],
+        "frame": [null, {"step": "year", "unit": "year"}]
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "axis": {"title": "Date Address From", "format": "year"}},
+    "y": {"field": "sum_monthly_rental", "type": "quantitative", "axis": {"title": "Sum of Monthly Rental"}},
+    "color": {
+      "field": "other_details",
+      "type": "nominal",
+      "scale": {"scheme": "category20c"},
+      "legend": {"title": "Other Details"}
+    },
+    "order": {"field": "sum_monthly_rental", "order": "descending"}
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "title": {
+      "anchor": "start",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "dx": 20
+    }
+  }
+}
+
+#17
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/manufactory_1",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "groupby": ["Headquarter", "Name"],
+        "aggregate": [{"op": "first", "field": "Code", "as": "Code"}],
+        "sort": [{"field": "Name", "order": "descending"}],
+        "frame": [null, {"step": "Name", "unit": "Name"}]
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Name", "type": "nominal", "axis": {"title": "Product Name"}},
+    "y": {"field": "Code", "type": "ordinal", "axis": {"title": "Code"}},
+    "color": {
+      "field": "Headquarter",
+      "type": "nominal",
+      "scale": {"scheme": "category20c"},
+      "legend": {"title": "Headquarter"}
+    },
+    "order": {"field": "Name", "order": "descending"}
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "title": {
+      "anchor": "start",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "dx": 20
+    }
+  }
+}
+
+#18
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/local_govt_in_alabama",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "groupby": ["Participant_ID"],
+        "aggregate": [{"op": "count", "field": "*", "as": "count_events"}],
+        "sort": [{"field": "Participant_ID", "order": "ascending"}]
+      },
+      {
+        "lookup": "Participant_Type_Code",
+        "from": {"data": {"name": "Participants"}, "key": "Participant_Type_Code", "fields": ["Participant_Type_Code", "Participant_Type"]}
+      }
+    ]
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {"field": "Participant_ID", "type": "nominal", "axis": {"title": "Participant ID"}},
+    "y": {"field": "count_events", "type": "quantitative", "axis": {"title": "Number of Events Attended"}},
+    "color": {
+      "field": "Participant_Type",
+      "type": "nominal",
+      "scale": {"scheme": "category20c"},
+      "legend": {"title": "Participant Type"}
+    }
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "title": {
+      "anchor": "start",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "dx": 20
+    }
+  }
+}
+
+#19
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/hr_1",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "filter": "(datum.salary >= 8000 && datum.salary <= 12000) || datum.department_id != 40 || datum.commission_pct != null"
+      }
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "HIRE_DATE",
+      "type": "temporal",
+      "axis": {
+        "title": "Hire Date",
+        "format": "%Y-%m-%d",
+        "grid": false,
+        "ticks": 20,
+        "tickMinStep": 10
+      }
+    },
+    "y": {
+      "field": "DEPARTMENT_ID",
+      "type": "quantitative",
+      "axis": {
+        "title": "Department ID",
+        "grid": false,
+        "ticks": 10,
+        "tickMinStep": 10
+      }
+    },
+    "order": {
+      "field": "HIRE_DATE",
+      "order": "ascending"
+    }
+  },
+  "config": {
+    "axis": {
+      "domainColor": "#333",
+      "gridColor": "#e0e0e0",
+      "titleColor": "#333",
+      "titleFontWeight": "bold",
+      "labelFontSize": 12,
+      "labelFontWeight": "normal",
+      "labelLimit": 50
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "title": {
+      "anchor": "start",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "dx": 20
+    }
+  }
+}
+
+#20
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://your_data_source_url/college_2",
+    "format": {"type": "json", "property": "records"},
+    "transform": [
+      {
+        "groupby": ["semester"],
+        "aggregate": [{"op": "count", "field": "*", "as": "count_course"}],
+        "bin": {"field": "year", "bins": 10, "step": 1, "as": "year_bin"},
+        "sort": [{"field": "year_bin", "order": "ascending"}]
+      }
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "year_bin",
+      "type": "quantitative",
+      "axis": {
+        "title": "Year",
+        "grid": false,
+        "ticks": 10,
+        "tickMinStep": 1
+      }
+    },
+    "y": {
+      "field": "count_course",
+      "type": "quantitative",
+      "axis": {
+        "title": "Number of Courses",
+        "grid": false,
+        "ticks": 10,
+        "tickMinStep": 1
+      }
+    },
+    "color": {
+      "field": "semester",
+      "type": "nominal",
+      "scale": {
+        "scheme": "category10"
+      },
+      "legend": {
+        "orient": "right",
+        "title": "Semester"
+      }
+    }
+  },
+  "config": {
+    "axis": {
+      "domainColor": "#333",
+      "gridColor": "#e0e0e0",
+      "titleColor": "#333",
+      "titleFontWeight": "bold",
+      "labelFontSize": 12,
+      "labelFontWeight": "normal",
+      "labelLimit": 50
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "title": {
+      "anchor": "start",
+      "fontSize": 14,
+      "fontWeight": "bold",
+      "dx": 20
+    }
+  }
+}

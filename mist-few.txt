@@ -1,0 +1,130 @@
+#1
+vlSpec2 = {'data': {'values': [{'x_data': 'Fri', 'y_data': 9}, {'x_data': 'Tue', 'y_data': 3}, {'x_data': 'Mon', 'y_data': 2}, {'x_data': 'Sun', 'y_data': 1}, {'x_data': 'Wed', 'y_data': 0}, {'x_data': 'Thur', 'y_data': 0}, {'x_data': 'Sat', 'y_data': 0}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Date_in_Location_From', 'sort': None}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(Date_in_Location_From)', 'aggregate': 'sum'}}}, 'transform': [{'calculate': 'datum.x_data', 'as': 'weekday', 'type': 'nominal', 'groupby': ['Date_in_Location_From']}]}
+
+#2
+vlSpec2 = {'data': {'values': [{'x_data': 'The Case of the Mystery Weekend', 'y_data': 15.99}, {'x_data': 'The Case of the Smart Dummy', 'y_data': 12.99}, {'x_data': 'The Case: Off the Record', 'y_data': 8.99}, {'x_data': 'The Case of the Bermuda Triangle', 'y_data': 9.99}, {'x_data': 'The Case of the Piggy Banker', 'y_data': 12.99}]}, 'mark': 'arc', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Title'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'max(T1.price)', 'aggregate': 'sum'}}}
+
+#3
+vlSpec2 = {'data': {'values': [{'x_data': 'One', 'y_data': 2}, {'x_data': 'Three', 'y_data': 1}, {'x_data': 'Four', 'y_data': 1}, {'x_data': 'Five', 'y_data': 2}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Name'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'count(*)'}}}
+#4
+vlSpec2 = {'data': {'values': [{'x_data': 'Charlie Hollocher', 'y_data': 1}, {'x_data': 'Eddie Collins', 'y_data': 2}, {'x_data': 'Joe Cochrane', 'y_data': 1}, {'x_data': 'Lou Boudrea', 'y_data': 1}, {'x_data': 'Mark Sewell', 'y_data': 1}, {'x_data': 'Mickey Cochrane', 'y_data': 1}, {'x_data': 'Tony Sewell', 'y_data': 1}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Name', 'sort': {'op': 'ascending', 'field': 'x_data'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(Name)'}}
+
+#5
+vlSpec2 = {'data': {'values': [{'x_data': '4:57.03', 'y_data': 1}, {'x_data': '4:56.96', 'y_data': 2}, {'x_data': '4:56.15', 'y_data': 6}, {'x_data': '4:55.08', 'y_data': 4}, {'x_data': '4:54.48', 'y_data': 5}, {'x_data': '4:54.21', 'y_data': 7}, {'x_data': '4:54.19', 'y_data': 3}, {'x_data': '4:52.85', 'y_data': 8}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'temporal', 'title': 'meter_500', 'sort': {'op': 'descending', 'field': 'x_data'}}, 'y': {'field': 'y_data', 'type': 'nominal', 'title': 'ID'}}}
+
+#6
+vlSpec2 = {'data': {'values': [{'x_data': 'Hardware', 'y_data': 971.44}, {'x_data': 'Clothes', 'y_data': 939.57}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'product_type_code', 'sort': {'op': 'descending', 'field': 'x_data'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'max(product_price)'}}}
+
+#7
+vlSpec2 = {'data': {'values': [{'x_data': 784475000, 'y_data': 52.57192982456139}, {'x_data': 3705025700, 'y_data': 67.44117647058825}, {'x_data': 30401150, 'y_data': 69.715}, {'x_data': 345780000, 'y_data': 70.94615384615386}]}, 'mark': 'circle', 'encoding': {'x': {'field': 'x_data', 'type': 'quantitative', 'title': 'sum(Population)'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'avg(LifeExpectancy)'}}}
+
+#8
+vlSpec2 = {'data': {'values': [{'x_data': 'Wintheiser', 'y_data': 1}, {'x_data': 'Senger', 'y_data': 1}, {'x_data': 'Hartmann', 'y_data': 2}, {'x_data': 'Grant', 'y_data': 1}, {'x_data': 'Feest', 'y_data': 1}, {'x_data': 'Bednar', 'y_data': 1}, {'x_data': 'Bartoletti', 'y_data': 1}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'last_name', 'sort': {'op': 'descending', 'field': 'x_data'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(last_name)'}}
+
+#9
+vlSpec2 = {
+  "data": {
+    "values": [
+      {"Name": "ZIP drive", "Price": [0, 150, 0, 0, 0, 0], "Headquarter": "Austin"},
+      {"Name": "Toner cartridge", "Price": [0, 0, 66, 0, 0, 0], "Headquarter": "Beijing"},
+      {"Name": "Printer", "Price": [0, 0, 270, 0, 0, 0], "Headquarter": "Los Angeles"},
+      {"Name": "Monitor", "Price": [0, 0, 0, 0, 240, 240], "Headquarter": "Paris"},
+      {"Name": "Memory", "Price": [0, 0, 0, 120, 0, 0], "Headquarter": "Taiwan"},
+      {"Name": "Hard drive", "Price": [0, 0, 0, 0, 240, 0], "Headquarter": "Tokyo"}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Name", "type": "nominal", "title": "Name", "sort": {"op": "descending"}},
+    "y": {"field": "Price", "type": "quantitative", "title": "Price", "stack": "zero"},
+    "color": {"field": "Headquarter", "type": "nominal", "title": "Headquarter", "scale": {"domain": ["Austin", "Beijing", "Los Angeles", "Paris", "Taiwan", "Tokyo"], "range": ["#ff7f0e", "#1f77b4", "#2ca02c", "#d62728", "#9467bd", "#8c564b"]}}
+  }
+}
+
+#10
+vlSpec2 = {'data': {'values': [{'x_data': '17891809', 'y_data': 20}, {'x_data': '18101830', 'y_data': 0}, {'x_data': '18311851', 'y_data': 10}, {'x_data': '18521872', 'y_data': 23}, {'x_data': '18731893', 'y_data': 77}, {'x_data': '18941914', 'y_data': 65}, {'x_data': '19151935', 'y_data': 0}, {'x_data': '19361956', 'y_data': 982}, {'x_data': '19571977', 'y_data': 125}, {'x_data': '19781998', 'y_data': 135}, {'x_data': '1999~2002', 'y_data': 44}]}, 'mark': 'line', 'encoding': {'x': {'field': 'x_data', 'type': 'ordinal', 'title': 'Creation', 'sort': {'op': 'ascending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'SUM(Budget_in_Billions)', 'aggregate': 'sum'}}}
+
+#11
+vlSpec2 = {'data': {'values': [{'x_data': '19031913', 'y_data': 2}, {'x_data': '19141924', 'y_data': 3}, {'x_data': '19251935', 'y_data': 0}, {'x_data': '19361946', 'y_data': 0}, {'x_data': '19471957', 'y_data': 0}, {'x_data': '19581968', 'y_data': 0}, {'x_data': '19691979', 'y_data': 1}, {'x_data': '19801990', 'y_data': 1}, {'x_data': '19912001', 'y_data': 1}, {'x_data': '20022012', 'y_data': 4}, {'x_data': '2013', 'y_data': 1}]}, 'mark': 'line', 'encoding': {'x': {'field': 'x_data', 'type': 'ordinal', 'title': 'year', 'sort': {'op': 'ascending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(year)', 'aggregate': 'sum'}}}
+
+#12
+vlSpec2 = {
+'data': {'values': [{'year': '19031913', 'count': 10}, {'year': '19141924', 'count': 15}, {'year': '19251935', 'count': 0}, {'year': '19361946', 'count': 0}, {'year': '19471957', 'count': 0}, {'year': '19581968', 'count': 0}, {'year': '19691979', 'count': 5}, {'year': '19801990', 'count': 5}, {'year': '19912001', 'count': 5}, {'year': '20022012', 'count': 40}, {'year': '2013', 'count': 15}]},
+'mark': 'line',
+'encoding': {
+'x': {'field': 'year', 'type': 'ordinal', 'title': 'Year', 'sort': {'op': 'ascending'}},
+'y': {'field': 'count', 'type': 'quantitative', 'title': 'Number of Wins'}
+}
+}
+
+#13
+vlSpec2 = {'data': {'values': [{'x_data': 'Apple', 'y_data': 5}, {'x_data': 'gucci', 'y_data': 2}, {'x_data': 'jcrew', 'y_data': 3}, {'x_data': 'Sony', 'y_data': 3}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'product_name', 'sort': {'op': 'ascending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(product_name)', 'aggregate': 'sum'}}}
+
+#14
+vlSpec2 = {'data': {'values': [{'x_data': 'Books', 'y_data': 4}, {'x_data': 'Clothes', 'y_data': 2}, {'x_data': 'Electronics', 'y_data': 4}, {'x_data': 'Food', 'y_data': 5}]}, 'mark': 'arc', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Product Type Code'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(*)', 'aggregate': 'sum'}}}
+
+#15
+vlSpec2 = {'data': {'values': [{'x_data': 'Wed', 'y_data': 2}, {'x_data': 'Thur', 'y_data': 2}, {'x_data': 'Sun', 'y_data': 1}, {'x_data': 'Tue', 'y_data': 0}, {'x_data': 'Sat', 'y_data': 0}, {'x_data': 'Mon', 'y_data': 0}, {'x_data': 'Fri', 'y_data': 0}]}, 'mark': 'bar', 'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Weekday', 'sort': {'op': 'ascending'}}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'COUNT(Document_Date)', 'aggregate': 'sum', 'sort': {'op': 'sum', 'field': 'y_data', 'order': 'descending'}}}}
+
+#16
+vlSpec2 = {
+'data': {'values': [{'date_address_from': '2017', 'other_details': 'apartment', 'monthly_rental': 5016},
+{'date_address_from': '2018', 'other_details': 'apartment', 'monthly_rental': 2329},
+{'date_address_from': '2017', 'other_details': 'house', 'monthly_rental': 8293},
+{'date_address_from': '2018', 'other_details': 'house', 'monthly_rental': 3176}]},
+'mark': 'bar',
+'encoding': {
+'x': {'field': 'date_address_from', 'type': 'nominal', 'title': 'Year'},
+'y': {'field': 'monthly_rental', 'type': 'quantitative', 'title': 'SUM(monthly_rental)', 'aggregate': 'sum'},
+'color': {'field': 'other_details', 'type': 'nominal', 'title': 'other_details', 'legend': {'orient': 'right'}},
+'order': {'field': 'monthly_rental', 'type': 'quantitative', 'aggregate': 'sum', 'sort': 'descending'}
+}
+}
+
+#17
+vlSpec2 = {
+'data': {'values': [{'x_data': 'ZIP drive', 'y_data': [0, 3, 0, 0, 0, 0]},
+                {'x_data': 'Toner cartridge', 'y_data': [0, 0, 9, 0, 0, 0]},
+                {'x_data': 'Printer', 'y_data': [0, 0, 8, 0, 0, 0]},
+                {'x_data': 'Monitor', 'y_data': [0, 0, 0, 0, 0, 5]},
+                {'x_data': 'Memory', 'y_data': [0, 0, 0, 2, 0, 0]},
+                {'x_data': 'Hard drive', 'y_data': [0, 0, 0, 0, 1, 0]},
+                {'x_data': 'Floppy disk', 'y_data': [0, 0, 0, 4, 0, 0]},
+                {'x_data': 'DVD drive', 'y_data': [6, 0, 11, 0, 0, 0]},
+                {'x_data': 'DVD burner', 'y_data': [10, 0, 0, 0, 0, 0]},
+                {'x_data': 'CD drive', 'y_data': [7, 0, 0, 0, 0, 0]}
+]},
+'mark': 'bar',
+'encoding': {'x': {'field': 'x_data', 'type': 'nominal', 'title': 'Name'},
+             'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'Code'},
+             'color': {'field': 'y_data', 'type': 'nominal', 'title': 'Headquarter',
+                        'scale': {'domain': [0, 3, 0, 0, 0, 0, 6, 10, 7, 0, 0, 9, 8, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 1, 0, 0, 5, 11, 0, 0]},
+                        'legend': {'orient': 'bottom'}}
+             }
+}
+
+#18
+vlSpec2 = {
+'data': {'values': [{'x_data': 26, 'y_data': 2, 'classify': 'Organizer'},
+{'x_data': 36, 'y_data': 1, 'classify': 'Organizer'},
+{'x_data': 86, 'y_data': 2, 'classify': 'Organizer'},
+{'x_data': 96, 'y_data': 1, 'classify': 'Organizer'},
+{'x_data': 37, 'y_data': 2, 'classify': 'Participant'},
+{'x_data': 60, 'y_data': 1, 'classify': 'Participant'},
+{'x_data': 63, 'y_data': 1, 'classify': 'Participant'},
+{'x_data': 64, 'y_data': 1, 'classify': 'Participant'},
+{'x_data': 66, 'y_data': 4, 'classify': 'Participant'},
+{'x_data': 90, 'y_data': 3, 'classify': 'Participant'}
+]},
+'mark': 'circle',
+'encoding': {'x': {'field': 'x_data', 'type': 'quantitative', 'title': 'Participant ID'},
+'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'Number of Events'},
+'color': {'field': 'classify', 'type': 'nominal', 'title': 'Participant Type'}
+}
+}
+
+#19
+vlSpec2 = {'data': {'values': [{'x_data': '1987-06-17', 'y_data': 90}, {'x_data': '1987-06-18', 'y_data': 90}, {'x_data': '1987-06-19', 'y_data': 90}, {'x_data': '1987-06-20', 'y_data': 60}, {'x_data': '1987-06-21', 'y_data': 60}, {'x_data': '1987-06-22', 'y_data': 60}, {'x_data': '1987-06-23', 'y_data': 60}, {'x_data': '1987-06-24', 'y_data': 60}, {'x_data': '1987-06-25', 'y_data': 100}, {'x_data': '1987-06-26', 'y_data': 100}, {'x_data': '1987-06-27', 'y_data': 100}, {'x_data': '1987-06-28', 'y_data': 100}, {'x_data': '1987-06-29', 'y_data': 100}, {'x_data': '1987-06-30', 'y_data': 100}, {'x_data': '1987-07-01', 'y_data': 30}, {'x_data': '1987-07-02', 'y▌
+
+#20
+vlSpec2 = {'data': {'values': [{'x_data': '2001', 'y_data': 2, 'classify': 'Fall'}, {'x_data': '2002', 'y_data': 9, 'classify': 'Fall'}, {'x_data': '2003', 'y_data': 6, 'classify': 'Fall'}, {'x_data': '2004', 'y_data': 3, 'classify': 'Fall'}, {'x_data': '2005', 'y_data': 4, 'classify': 'Fall'}, {'x_data': '2006', 'y_data': 8, 'classify': 'Fall'}, {'x_data': '2007', 'y_data': 6, 'classify': 'Fall'}, {'x_data': '2008', 'y_data': 1, 'classify': 'Fall'}, {'x_data': '2009', 'y_data': 7, 'classify': 'Fall'}, {'x_data': '2010', 'y_data': 5, 'classify': 'Fall'}, {'x_data': '2001', 'y_data': 3, 'classify': 'Spring'}, {'x_data': '2002', 'y_data': 4, 'classify': 'Spring'}, {'x_data': '2003', 'y_data': 6, 'classify': 'Spring'}, {'x_data': '2004', 'y_data': 4, 'classify': 'Spring'}, {'x_data': '2005', 'y_data': 4, 'classify': 'Spring'}, {'x_data': '2006', 'y_data': 5, 'classify': 'Spring'}, {'x_data': '2007', 'y_data': 6, 'classify': 'Spring'}, {'x_data': '2008', 'y_data': 9, 'classify': 'Spring'}, {'x_data': '2009', 'y_data': 2, 'classify': 'Spring'}, {'x_data': '2010', 'y_data': 6, 'classify': 'Spring'}]}, 'mark': 'line', 'encoding': {'x': {'field': 'x_data', 'type': 'temporal', 'title': 'year'}, 'y': {'field': 'y_data', 'type': 'quantitative', 'title': 'count(*)'}, 'color': {'field': 'classify', 'type': 'nominal', 'title': 'semester'}}}

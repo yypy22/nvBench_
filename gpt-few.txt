@@ -1,0 +1,612 @@
+#1
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"x_data": "Fri", "y_data": 9},
+            {"x_data": "Tue", "y_data": 3},
+            {"x_data": "Mon", "y_data": 2},
+            {"x_data": "Sun", "y_data": 1},
+            {"x_data": "Wed", "y_data": 0},
+            {"x_data": "Thur", "y_data": 0},
+            {"x_data": "Sat", "y_data": 0}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "x_data",
+            "type": "nominal",
+            "title": "Date in Location From",
+            "sort": {"op": "sum", "field": "y_data", "order": "descending"}
+        },
+        "y": {
+            "field": "y_data",
+            "type": "quantitative",
+            "title": "COUNT(Date_in_Location_From)"
+        }
+    }
+}
+
+#2
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Title": "The Case of the Mystery Weekend", "max(T1.price)": 15.99},
+            {"Title": "The Case of the Smart Dummy", "max(T1.price)": 12.99},
+            {"Title": "The Case: Off the Record", "max(T1.price)": 8.99},
+            {"Title": "The Case of the Bermuda Triangle", "max(T1.price)": 9.99},
+            {"Title": "The Case of the Piggy Banker", "max(T1.price)": 12.99}
+        ]
+    },
+    "mark": "arc",
+    "encoding": {
+        "theta": {"field": "max(T1.price)", "type": "quantitative", "title": "Max Price"},
+        "color": {"field": "Title", "type": "nominal", "title": "Film Title"}
+    }
+}
+
+#3
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"x_data": "One", "y_data": 2},
+            {"x_data": "Three", "y_data": 1},
+            {"x_data": "Four", "y_data": 1},
+            {"x_data": "Five", "y_data": 2}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "x_data",
+            "type": "nominal",
+            "title": "Name",
+            "sort": "-y"
+        },
+        "y": {
+            "field": "y_data",
+            "type": "quantitative",
+            "title": "Number of Affected Regions"
+        }
+    }
+}
+
+#4
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Name": "Charlie Hollocher", "COUNT(Name)": 1},
+            {"Name": "Eddie Collins", "COUNT(Name)": 2},
+            {"Name": "Joe Cochrane", "COUNT(Name)": 1},
+            {"Name": "Lou Boudrea", "COUNT(Name)": 1},
+            {"Name": "Mark Sewell", "COUNT(Name)": 1},
+            {"Name": "Mickey Cochrane", "COUNT(Name)": 1},
+            {"Name": "Tony Sewell", "COUNT(Name)": 1}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Technician Name",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "COUNT(Name)",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}
+
+#5
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"meter_500": "4:57.03", "ID": 1},
+            {"meter_500": "4:56.96", "ID": 2},
+            {"meter_500": "4:56.15", "ID": 6},
+            {"meter_500": "4:55.08", "ID": 4},
+            {"meter_500": "4:54.48", "ID": 5},
+            {"meter_500": "4:54.21", "ID": 7},
+            {"meter_500": "4:54.19", "ID": 3},
+            {"meter_500": "4:52.85", "ID": 8}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "meter_500",
+            "type": "ordinal",
+            "title": "500 Meter Time",
+            "sort": "descending"
+        },
+        "y": {
+            "field": "ID",
+            "type": "nominal",
+            "title": "Swimmer ID"
+        }
+    }
+}
+
+#6
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"product_type_code": "Hardware", "max(product_price)": 971.44},
+            {"product_type_code": "Clothes", "max(product_price)": 939.57}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "product_type_code",
+            "type": "nominal",
+            "title": "Product Type Code",
+            "sort": "descending"
+        },
+        "y": {
+            "field": "max(product_price)",
+            "type": "quantitative",
+            "title": "Maximum Product Price"
+        }
+    }
+}
+
+#7
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"sum(Population)": 784475000, "avg(LifeExpectancy)": 52.57192982456139},
+            {"sum(Population)": 3705025700, "avg(LifeExpectancy)": 67.44117647058825},
+            {"sum(Population)": 30401150, "avg(LifeExpectancy)": 69.715},
+            {"sum(Population)": 345780000, "avg(LifeExpectancy)": 70.94615384615386}
+        ]
+    },
+    "mark": "point",
+    "encoding": {
+        "x": {
+            "field": "sum(Population)",
+            "type": "quantitative",
+            "title": "Total Population"
+        },
+        "y": {
+            "field": "avg(LifeExpectancy)",
+            "type": "quantitative",
+            "title": "Average Life Expectancy"
+        },
+        "tooltip": [
+            {"field": "sum(Population)", "type": "quantitative"},
+            {"field": "avg(LifeExpectancy)", "type": "quantitative"}
+        ]
+    }
+}
+
+#8
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"last_name": "Wintheiser", "COUNT(last_name)": 1},
+            {"last_name": "Senger", "COUNT(last_name)": 1},
+            {"last_name": "Hartmann", "COUNT(last_name)": 2},
+            {"last_name": "Grant", "COUNT(last_name)": 1},
+            {"last_name": "Feest", "COUNT(last_name)": 1},
+            {"last_name": "Bednar", "COUNT(last_name)": 1},
+            {"last_name": "Bartoletti", "COUNT(last_name)": 1}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "last_name",
+            "type": "nominal",
+            "title": "Last Name",
+            "sort": "descending"
+        },
+        "y": {
+            "field": "COUNT(last_name)",
+            "type": "quantitative",
+            "title": "Number of People"
+        }
+    }
+}
+
+#9
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Name": "ZIP drive", "Price": 150, "Headquarter": "Austin"},
+            {"Name": "DVD drive", "Price": 180, "Headquarter": "Los Angeles"},
+            {"Name": "DVD burner", "Price": 180, "Headquarter": "Los Angeles"},
+            {"Name": "CD drive", "Price": 90, "Headquarter": "Los Angeles"},
+            {"Name": "Toner cartridge", "Price": 66, "Headquarter": "Los Angeles"},
+            {"Name": "Printer", "Price": 270, "Headquarter": "Los Angeles"},
+            {"Name": "Memory", "Price": 120, "Headquarter": "Paris"},
+            {"Name": "Hard drive", "Price": 240, "Headquarter": "Taiwan"},
+            {"Name": "Monitor", "Price": 240, "Headquarter": "Tokyo"},
+            {"Name": "Floppy disk", "Price": 5, "Headquarter": "Paris"}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Product Name",
+            "sort": "descending"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative",
+            "title": "Price"
+        },
+        "color": {
+            "field": "Headquarter",
+            "type": "nominal",
+            "title": "Headquarter"
+        }
+    },
+    "config": {
+        "stack": "zero"
+    }
+}
+
+#10
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Creation": "1789~1809", "SUM(Budget_in_Billions)": 20},
+            {"Creation": "1810~1830", "SUM(Budget_in_Billions)": 0},
+            {"Creation": "1831~1851", "SUM(Budget_in_Billions)": 10},
+            {"Creation": "1852~1872", "SUM(Budget_in_Billions)": 23},
+            {"Creation": "1873~1893", "SUM(Budget_in_Billions)": 77},
+            {"Creation": "1894~1914", "SUM(Budget_in_Billions)": 65},
+            {"Creation": "1915~1935", "SUM(Budget_in_Billions)": 0},
+            {"Creation": "1936~1956", "SUM(Budget_in_Billions)": 982},
+            {"Creation": "1957~1977", "SUM(Budget_in_Billions)": 125},
+            {"Creation": "1978~1998", "SUM(Budget_in_Billions)": 135},
+            {"Creation": "1999~2002", "SUM(Budget_in_Billions)": 44}
+        ]
+    },
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "Creation",
+            "type": "ordinal",
+            "title": "Creation Period"
+        },
+        "y": {
+            "field": "SUM(Budget_in_Billions)",
+            "type": "quantitative",
+            "title": "Sum of Budget (in Billions)"
+        }
+    }
+}
+
+#11
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"year": "1903~1913", "COUNT(year)": 2},
+            {"year": "1914~1924", "COUNT(year)": 3},
+            {"year": "1925~1935", "COUNT(year)": 0},
+            {"year": "1936~1946", "COUNT(year)": 0},
+            {"year": "1947~1957", "COUNT(year)": 0},
+            {"year": "1958~1968", "COUNT(year)": 0},
+            {"year": "1969~1979", "COUNT(year)": 1},
+            {"year": "1980~1990", "COUNT(year)": 1},
+            {"year": "1991~2001", "COUNT(year)": 1},
+            {"year": "2002~2012", "COUNT(year)": 4},
+            {"year": "2013", "COUNT(year)": 1}
+        ]
+    },
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year Interval",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "COUNT(year)",
+            "type": "quantitative",
+            "title": "Frequency of Wins"
+        }
+    }
+}
+
+#12
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"year": "1903~1913", "SUM(count(*))": 10},
+            {"year": "1914~1924", "SUM(count(*))": 15},
+            {"year": "1925~1935", "SUM(count(*))": 0},
+            {"year": "1936~1946", "SUM(count(*))": 0},
+            {"year": "1947~1957", "SUM(count(*))": 0},
+            {"year": "1958~1968", "SUM(count(*))": 0},
+            {"year": "1969~1979", "SUM(count(*))": 5},
+            {"year": "1980~1990", "SUM(count(*))": 5},
+            {"year": "1991~2001", "SUM(count(*))": 5},
+            {"year": "2002~2012", "SUM(count(*))": 40},
+            {"year": "2013", "SUM(count(*))": 15}
+        ]
+    },
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year Interval",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "SUM(count(*))",
+            "type": "quantitative",
+            "title": "Total Postseason Wins"
+        }
+    }
+}
+
+#13
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"product_name": "Apple", "COUNT(product_name)": 5},
+            {"product_name": "Sony", "COUNT(product_name)": 3},
+            {"product_name": "gucci", "COUNT(product_name)": 2},
+            {"product_name": "jcrew", "COUNT(product_name)": 3}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "product_name",
+            "type": "nominal",
+            "title": "Product Name",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "COUNT(product_name)",
+            "type": "quantitative",
+            "title": "Number of Products"
+        }
+    }
+}
+
+#14
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Product_Type_Code": "Books", "COUNT(*)": 4},
+            {"Product_Type_Code": "Clothes", "COUNT(*)": 2},
+            {"Product_Type_Code": "Electronics", "COUNT(*)": 4},
+            {"Product_Type_Code": "Food", "COUNT(*)": 5}
+        ]
+    },
+    "mark": "arc",
+    "encoding": {
+        "theta": {"field": "COUNT(*)", "type": "quantitative", "title": "Number of Products"},
+        "color": {"field": "Product_Type_Code", "type": "nominal", "title": "Product Type Code"}
+    }
+}
+
+#15
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Document_Date": "Wed", "COUNT(Document_Date)": 2},
+            {"Document_Date": "Thur", "COUNT(Document_Date)": 2},
+            {"Document_Date": "Sun", "COUNT(Document_Date)": 1},
+            {"Document_Date": "Tue", "COUNT(Document_Date)": 0},
+            {"Document_Date": "Sat", "COUNT(Document_Date)": 0},
+            {"Document_Date": "Mon", "COUNT(Document_Date)": 0},
+            {"Document_Date": "Fri", "COUNT(Document_Date)": 0}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Document_Date",
+            "type": "nominal",
+            "title": "Day of the Week",
+            "sort": "-y"
+        },
+        "y": {
+            "field": "COUNT(Document_Date)",
+            "type": "quantitative",
+            "title": "Number of Documents",
+            "sort": "descending"
+        }
+    }
+}
+
+#16
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"date_address_from": "2017", "SUM(monthly_rental)": 5016, "Type": "apartment"},
+            {"date_address_from": "2018", "SUM(monthly_rental)": 2329, "Type": "apartment"},
+            {"date_address_from": "2017", "SUM(monthly_rental)": 8293, "Type": "house"},
+            {"date_address_from": "2018", "SUM(monthly_rental)": 3176, "Type": "house"}
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "date_address_from",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "SUM(monthly_rental)",
+            "type": "quantitative",
+            "title": "Sum of Monthly Rental"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "Dwelling Type"
+        },
+        "stack": "zero"
+    }
+}
+
+#17
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Name": "ZIP drive", "Code": 6, "Headquarter": "Los Angeles"},
+            {"Name": "ZIP drive", "Code": 3, "Headquarter": "Austin"},
+            {"Name": "Toner cartridge", "Code": 9, "Headquarter": "Los Angeles"},
+            {"Name": "Printer", "Code": 8, "Headquarter": "Los Angeles"},
+            {"Name": "Memory", "Code": 2, "Headquarter": "Paris"},
+            {"Name": "Hard drive", "Code": 1, "Headquarter": "Taiwan"},
+            {"Name": "Floppy disk", "Code": 4, "Headquarter": "Paris"},
+            {"Name": "DVD drive", "Code": 11, "Headquarter": "Los Angeles"},
+            {"Name": "DVD burner", "Code": 10, "Headquarter": "Los Angeles"},
+            {"Name": "CD drive", "Code": 7, "Headquarter": "Los Angeles"},
+            {"Name": "Monitor", "Code": 5, "Headquarter": "Tokyo"}
+            // Additional data would follow the same structure
+        ]
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Product Name",
+            "sort": "descending"
+        },
+        "y": {
+            "field": "Code",
+            "type": "quantitative",
+            "title": "Product Code"
+        },
+        "color": {
+            "field": "Headquarter",
+            "type": "nominal",
+            "title": "Headquarter",
+            "legend": {"title": "Headquarter by Color"}
+        }
+    },
+    "config": {
+        "stack": "zero"
+    }
+}
+
+#18
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"Participant_ID": 26, "count": 2, "Type": "Organizer"},
+            {"Participant_ID": 36, "count": 1, "Type": "Organizer"},
+            {"Participant_ID": 86, "count": 2, "Type": "Organizer"},
+            {"Participant_ID": 96, "count": 1, "Type": "Organizer"},
+            {"Participant_ID": 37, "count": 2, "Type": "Participant"},
+            {"Participant_ID": 60, "count": 1, "Type": "Participant"},
+            {"Participant_ID": 63, "count": 1, "Type": "Participant"},
+            {"Participant_ID": 64, "count": 1, "Type": "Participant"},
+            {"Participant_ID": 66, "count": 4, "Type": "Participant"},
+            {"Participant_ID": 90, "count": 3, "Type": "Participant"}
+        ]
+    },
+    "mark": "point",
+    "encoding": {
+        "x": {
+            "field": "Participant_ID",
+            "type": "quantitative",
+            "title": "Participant ID"
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Events Attended"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "Participant Type"
+        },
+        "tooltip": [
+            {"field": "Participant_ID", "type": "quantitative"},
+            {"field": "count", "type": "quantitative"},
+            {"field": "Type", "type": "nominal"}
+        ]
+    }
+}
+
+#19
+vlSpec2 = {
+    "data": {
+        "values": [
+            // Example data points, assuming each represents a unique combination or notable points
+            {"HIRE_DATE": "1987-06-17", "DEPARTMENT_ID": 90, "Employees": 2},
+            {"HIRE_DATE": "1987-07-01", "DEPARTMENT_ID": 30, "Employees": 3},
+            {"HIRE_DATE": "1987-08-01", "DEPARTMENT_ID": 80, "Employees": 5},
+            {"HIRE_DATE": "1987-09-01", "DEPARTMENT_ID": 50, "Employees": 4},
+            {"HIRE_DATE": "1987-10-01", "DEPARTMENT_ID": 110, "Employees": 1}
+            // Additional data points would follow the actual dataset
+        ]
+    },
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "HIRE_DATE",
+            "type": "temporal",
+            "title": "Hire Date",
+            "axis": {"format": "%Y-%m-%d"}
+        },
+        "y": {
+            "field": "DEPARTMENT_ID",
+            "type": "nominal",
+            "title": "Department ID"
+        },
+        "color": {
+            "field": "DEPARTMENT_ID",
+            "type": "nominal",
+            "legend": {"title": "Department ID"}
+        },
+        "tooltip": [
+            {"field": "HIRE_DATE", "type": "temporal"},
+            {"field": "DEPARTMENT_ID", "type": "nominal"},
+            {"field": "Employees", "type": "quantitative", "title": "Number of Employees"}
+        ]
+    }
+}
+
+#20
+vlSpec2 = {
+    "data": {
+        "values": [
+            {"year": "2001", "count": 2, "Semester": "Fall"},
+            {"year": "2002", "count": 9, "Semester": "Fall"},
+            {"year": "2003", "count": 6, "Semester": "Fall"},
+            // Additional Fall data
+            {"year": "2001", "count": 3, "Semester": "Spring"},
+            {"year": "2002", "count": 4, "Semester": "Spring"},
+            {"year": "2003", "count": 6, "Semester": "Spring"},
+            // Additional Spring data
+        ]
+    },
+    "mark": "line",
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Courses"
+        },
+        "color": {
+            "field": "Semester",
+            "type": "nominal",
+            "title": "Semester"
+        }
+    }
+}

@@ -1,0 +1,529 @@
+#1
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "Fri", "y_data": 9},
+      {"x_data": "Tue", "y_data": 3},
+      {"x_data": "Mon", "y_data": 2},
+      {"x_data": "Sun", "y_data": 1},
+      {"x_data": "Wed", "y_data": 0},
+      {"x_data": "Thur", "y_data": 0},
+      {"x_data": "Sat", "y_data": 0}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "Date_in_Location_From"
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "COUNT(Date_in_Location_From)",
+      "sort": {"op": "sum", "order": "descending"}
+    }
+  }
+}
+
+#2
+vlSpec = {
+  "data": {
+    "values": [
+      {"category": "The Case of the Mystery Weekend", "value": 15.99},
+      {"category": "The Case of the Smart Dummy", "value": 12.99},
+      {"category": "The Case: Off the Record", "value": 8.99},
+      {"category": "The Case of the Bermuda Triangle", "value": 9.99},
+      {"category": "The Case of the Piggy Banker", "value": 12.99}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {"field": "category", "type": "nominal"}
+  }
+}
+
+#3
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "One", "y_data": 2},
+      {"x_data": "Three", "y_data": 1},
+      {"x_data": "Four", "y_data": 1},
+      {"x_data": "Five", "y_data": 2}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "Name"
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "count(*)"
+    }
+  }
+}
+
+#4
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "Charlie Hollocher", "y_data": 1},
+      {"x_data": "Eddie Collins", "y_data": 2},
+      {"x_data": "Joe Cochrane", "y_data": 1},
+      {"x_data": "Lou Boudrea", "y_data": 1},
+      {"x_data": "Mark Sewell", "y_data": 1},
+      {"x_data": "Mickey Cochrane", "y_data": 1},
+      {"x_data": "Tony Sewell", "y_data": 1}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "Name",
+      "sort": {"op": "sum", "order": "ascending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "COUNT(Name)"
+    }
+  }
+}
+
+#5
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "4:52.85", "y_data": 8},
+      {"x_data": "4:54.19", "y_data": 3},
+      {"x_data": "4:54.21", "y_data": 7},
+      {"x_data": "4:54.48", "y_data": 5},
+      {"x_data": "4:55.08", "y_data": 4},
+      {"x_data": "4:56.15", "y_data": 6},
+      {"x_data": "4:56.96", "y_data": 2},
+      {"x_data": "4:57.03", "y_data": 1}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "ordinal",
+      "title": "meter_500",
+      "sort": {"op": "sum", "order": "descending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "nominal",
+      "title": "ID"
+    }
+  }
+}
+
+#6
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "Hardware", "y_data": 971.44},
+      {"x_data": "Clothes", "y_data": 939.57}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "product_type_code",
+      "sort": {"op": "sum", "order": "descending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "max(product_price)"
+    }
+  }
+}
+
+#7
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": 784475000, "y_data": 52.57192982456139},
+      {"x_data": 3705025700, "y_data": 67.44117647058825},
+      {"x_data": 30401150, "y_data": 69.715},
+      {"x_data": 345780000, "y_data": 70.94615384615386}
+    ]
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "quantitative",
+      "title": "sum(Population)"
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "avg(LifeExpectancy)"
+    }
+  }
+}
+
+#8
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "Wintheiser", "y_data": 1},
+      {"x_data": "Senger", "y_data": 1},
+      {"x_data": "Hartmann", "y_data": 2},
+      {"x_data": "Grant", "y_data": 1},
+      {"x_data": "Feest", "y_data": 1},
+      {"x_data": "Bednar", "y_data": 1},
+      {"x_data": "Bartoletti", "y_data": 1}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "last_name",
+      "sort": {"op": "sum", "order": "descending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "COUNT(last_name)"
+    }
+  }
+}
+
+#9
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "ZIP drive", "y_data": 150, "classify": "Taiwan"},
+      {"x_data": "Toner cartridge", "y_data": 66, "classify": "Los Angeles"},
+      {"x_data": "Printer", "y_data": 270, "classify": "Los Angeles"},
+      {"x_data": "Monitor", "y_data": 240, "classify": "Tokyo"},
+      {"x_data": "Memory", "y_data": 120, "classify": "Paris"},
+      {"x_data": "Hard drive", "y_data": 240, "classify": "Beijing"},
+      {"x_data": "Floppy disk", "y_data": 5, "classify": "Paris"},
+      {"x_data": "DVD drive", "y_data": 180, "classify": "Austin"},
+      {"x_data": "DVD burner", "y_data": 180, "classify": "Austin"},
+      {"x_data": "CD drive", "y_data": 90, "classify": "Austin"}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "x_data", "type": "nominal", "sort": {"order": "descending"}},
+    "y": {"field": "y_data", "type": "quantitative"},
+    "color": {"field": "classify", "type": "nominal"}
+  }
+}
+
+#10
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "1789~1809", "y_data": 20},
+      {"x_data": "1810~1830", "y_data": 0},
+      {"x_data": "1831~1851", "y_data": 10},
+      {"x_data": "1852~1872", "y_data": 23},
+      {"x_data": "1873~1893", "y_data": 77},
+      {"x_data": "1894~1914", "y_data": 65},
+      {"x_data": "1915~1935", "y_data": 0},
+      {"x_data": "1936~1956", "y_data": 982},
+      {"x_data": "1957~1977", "y_data": 125},
+      {"x_data": "1978~1998", "y_data": 135},
+      {"x_data": "1999~2002", "y_data": 44}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "ordinal",
+      "title": "Creation"
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "SUM(Budget_in_Billions)"
+    }
+  }
+}
+
+#11
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "1903~1913", "y_data": 2},
+      {"x_data": "1914~1924", "y_data": 3},
+      {"x_data": "1925~1935", "y_data": 0},
+      {"x_data": "1936~1946", "y_data": 0},
+      {"x_data": "1947~1957", "y_data": 0},
+      {"x_data": "1958~1968", "y_data": 0},
+      {"x_data": "1969~1979", "y_data": 1},
+      {"x_data": "1980~1990", "y_data": 1},
+      {"x_data": "1991~2001", "y_data": 1},
+      {"x_data": "2002~2012", "y_data": 4},
+      {"x_data": "2013", "y_data": 1}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "ordinal",
+      "title": "year",
+      "sort": {"order": "ascending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "COUNT(year)"
+    }
+  }
+}
+
+#12
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "1903~1913", "y_data": 10},
+      {"x_data": "1914~1924", "y_data": 15},
+      {"x_data": "1925~1935", "y_data": 0},
+      {"x_data": "1936~1946", "y_data": 0},
+      {"x_data": "1947~1957", "y_data": 0},
+      {"x_data": "1958~1968", "y_data": 0},
+      {"x_data": "1969~1979", "y_data": 5},
+      {"x_data": "1980~1990", "y_data": 5},
+      {"x_data": "1991~2001", "y_data": 5},
+      {"x_data": "2002~2012", "y_data": 40},
+      {"x_data": "2013", "y_data": 15}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "ordinal",
+      "title": "year",
+      "sort": {"order": "ascending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "SUM(count(*))"
+    }
+  }
+}
+
+#13
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "Apple", "y_data": 5},
+      {"x_data": "Sony", "y_data": 3},
+      {"x_data": "gucci", "y_data": 2},
+      {"x_data": "jcrew", "y_data": 3}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "product_name",
+      "sort": {"order": "ascending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "COUNT(product_name)"
+    }
+  }
+}
+
+#14
+vlSpec = {
+  "data": {
+    "values": [
+      {"category": "Books", "value": 4},
+      {"category": "Clothes", "value": 2},
+      {"category": "Electronics", "value": 4},
+      {"category": "Food", "value": 5}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "value", "type": "quantitative"},
+    "color": {"field": "category", "type": "nominal"}
+  }
+}
+
+#15
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "Wed", "y_data": 2},
+      {"x_data": "Thur", "y_data": 2},
+      {"x_data": "Sun", "y_data": 1},
+      {"x_data": "Tue", "y_data": 0},
+      {"x_data": "Sat", "y_data": 0},
+      {"x_data": "Mon", "y_data": 0},
+      {"x_data": "Fri", "y_data": 0}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "nominal",
+      "title": "Document_Date"
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "COUNT(Document_Date)",
+      "sort": {"order": "descending"}
+    }
+  }
+}
+
+#16
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "2017", "y_data": 5016, "classify": "apartment"},
+      {"x_data": "2017", "y_data": 8293, "classify": "house"},
+      {"x_data": "2018", "y_data": 2329, "classify": "apartment"},
+      {"x_data": "2018", "y_data": 3176, "classify": "house"}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "x_data", "type": "nominal", "title": "date_address_from"},
+    "y": {"field": "y_data", "type": "quantitative", "title": "SUM(monthly_rental)"},
+    "color": {"field": "classify", "type": "nominal"}
+  }
+}
+
+#17
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "ZIP drive", "y_data": 3, "classify": "Taiwan"},
+      {"x_data": "Toner cartridge", "y_data": 9, "classify": "Los Angeles"},
+      {"x_data": "Printer", "y_data": 8, "classify": "Los Angeles"},
+      {"x_data": "Monitor", "y_data": 5, "classify": "Tokyo"},
+      {"x_data": "Memory", "y_data": 2, "classify": "Paris"},
+      {"x_data": "Hard drive", "y_data": 1, "classify": "Beijing"},
+      {"x_data": "Floppy disk", "y_data": 4, "classify": "Paris"},
+      {"x_data": "DVD drive", "y_data": 11, "classify": "Austin"},
+      {"x_data": "DVD burner", "y_data": 10, "classify": "Austin"},
+      {"x_data": "CD drive", "y_data": 7, "classify": "Austin"}
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "x_data", "type": "nominal", "sort": {"order": "descending"}},
+    "y": {"field": "y_data", "type": "quantitative"},
+    "color": {"field": "classify", "type": "nominal"}
+  }
+}
+
+#18
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": 26, "y_data": 2, "classify": "Organizer"},
+      {"x_data": 36, "y_data": 1, "classify": "Organizer"},
+      {"x_data": 86, "y_data": 2, "classify": "Organizer"},
+      {"x_data": 96, "y_data": 1, "classify": "Organizer"},
+      {"x_data": 37, "y_data": 2, "classify": "Participant"},
+      {"x_data": 60, "y_data": 1, "classify": "Participant"},
+      {"x_data": 63, "y_data": 1, "classify": "Participant"},
+      {"x_data": 64, "y_data": 1, "classify": "Participant"},
+      {"x_data": 66, "y_data": 4, "classify": "Participant"},
+      {"x_data": 90, "y_data": 3, "classify": "Participant"}
+    ]
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "x_data", "type": "quantitative", "title": "Participant ID"},
+    "y": {"field": "y_data", "type": "quantitative", "title": "count(*)"},
+    "color": {"field": "classify", "type": "nominal"}
+  }
+}
+
+#19
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "1987-06-17", "y_data": 90},
+      {"x_data": "1987-06-18", "y_data": 90},
+      ...
+      {"x_data": "1987-10-01", "y_data": 110}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {
+      "field": "x_data",
+      "type": "temporal",
+      "timeUnit": "yearmonthdate",
+      "title": "HIRE_DATE",
+      "sort": {"order": "ascending"}
+    },
+    "y": {
+      "field": "y_data",
+      "type": "quantitative",
+      "title": "DEPARTMENT_ID"
+    }
+  }
+}
+
+#20
+vlSpec = {
+  "data": {
+    "values": [
+      {"x_data": "2001", "y_data": 2, "classify": "Fall"},
+      {"x_data": "2002", "y_data": 9, "classify": "Fall"},
+      {"x_data": "2003", "y_data": 6, "classify": "Fall"},
+      {"x_data": "2004", "y_data": 3, "classify": "Fall"},
+      {"x_data": "2005", "y_data": 4, "classify": "Fall"},
+      {"x_data": "2006", "y_data": 8, "classify": "Fall"},
+      {"x_data": "2007", "y_data": 6, "classify": "Fall"},
+      {"x_data": "2008", "y_data": 1, "classify": "Fall"},
+      {"x_data": "2009", "y_data": 7, "classify": "Fall"},
+      {"x_data": "2010", "y_data": 5, "classify": "Fall"},
+      {"x_data": "2001", "y_data": 3, "classify": "Spring"},
+      {"x_data": "2002", "y_data": 4, "classify": "Spring"},
+      {"x_data": "2003", "y_data": 6, "classify": "Spring"},
+      {"x_data": "2004", "y_data": 4, "classify": "Spring"},
+      {"x_data": "2005", "y_data": 4, "classify": "Spring"},
+      {"x_data": "2006", "y_data": 5, "classify": "Spring"},
+      {"x_data": "2007", "y_data": 6, "classify": "Spring"},
+      {"x_data": "2008", "y_data": 9, "classify": "Spring"},
+      {"x_data": "2009", "y_data": 2, "classify": "Spring"},
+      {"x_data": "2010", "y_data": 6, "classify": "Spring"}
+    ]
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "x_data", "type": "ordinal"},
+    "y": {"field": "y_data", "type": "quantitative"},
+    "color": {"field": "classify", "type": "nominal"}
+  }
+}

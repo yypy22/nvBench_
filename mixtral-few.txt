@@ -1,0 +1,907 @@
+#1
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "Fri", "y_data": 9},
+{"x_data": "Tue", "y_data": 3},
+{"x_data": "Mon", "y_data": 2},
+{"x_data": "Sun", "y_data": 1},
+{"x_data": "Wed", "y_data": 0},
+{"x_data": "Thur", "y_data": 0},
+{"x_data": "Sat", "y_data": 0}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "Date in Location From",
+"sort": {"op": "sum", "field": "y_data", "order": "descending"}
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "COUNT(Date_in_Location_From)"
+}
+}
+}
+
+#2
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "The Case of the Mystery Weekend", "y_data": 15.99},
+{"x_data": "The Case of the Smart Dummy", "y_data": 12.99},
+{"x_data": "The Case: Off the Record", "y_data": 8.99},
+{"x_data": "The Case of the Bermuda Triangle", "y_data": 9.99},
+{"x_data": "The Case of the Piggy Banker", "y_data": 12.99}
+]
+},
+"mark": "pie",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "Title"
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "max(T1.price)"
+}
+}
+}
+
+#3
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "One", "y_data": 2},
+{"x_data": "Three", "y_data": 1},
+{"x_data": "Four", "y_data": 1},
+{"x_data": "Five", "y_data": 2}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "Name"
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "count(*)"
+}
+}
+}
+
+#4
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "Charlie Hollocher", "y_data": 1},
+{"x_data": "Eddie Collins", "y_data": 2},
+{"x_data": "Joe Cochrane", "y_data": 1},
+{"x_data": "Lou Boudrea", "y_data": 1},
+{"x_data": "Mark Sewell", "y_data": 1},
+{"x_data": "Mickey Cochrane", "y_data": 1},
+{"x_data": "Tony Sewell", "y_data": 1}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "Name",
+"sort": {"op": "sum", "field": "y_data", "order": "ascending"}
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "COUNT(Name)"
+}
+}
+}
+
+#5
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "4:57.03", "y_data": 1},
+{"x_data": "4:56.96", "y_data": 2},
+{"x_data": "4:56.15", "y_data": 6},
+{"x_data": "4:55.08", "y_data": 4},
+{"x_data": "4:54.48", "y_data": 5},
+{"x_data": "4:54.21", "y_data": 7},
+{"x_data": "4:54.19", "y_data": 3},
+{"x_data": "4:52.85", "y_data": 8}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "quantitative",
+"title": "meter_500",
+"sort": {"op": "sum", "field": "x_data", "order": "descending"}
+},
+"y": {
+"field": "y_data",
+"type": "nominal",
+"title": "ID"
+}
+}
+}
+
+#6
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "Hardware", "y_data": 971.44},
+{"x_data": "Clothes", "y_data": 939.57}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "product_type_code",
+"sort": {"op": "sum", "field": "x_data", "order": "descending"}
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "max(product_price)"
+}
+}
+}
+
+#7
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": 784475000, "y_data": 52.57192982456139},
+{"x_data": 3705025700, "y_data": 67.44117647058825},
+{"x_data": 30401150, "y_data": 69.715},
+{"x_data": 345780000, "y_data": 70.94615384615386}
+]
+},
+"mark": "point",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "quantitative",
+"title": "sum(Population)"
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "avg(LifeExpectancy)"
+}
+}
+}
+
+#8
+vlSpec2 = {
+"data": {
+"values": [
+{"x_data": "Wintheiser", "y_data": 1},
+{"x_data": "Senger", "y_data": 1},
+{"x_data": "Hartmann", "y_data": 2},
+{"x_data": "Grant", "y_data": 1},
+{"x_data": "Feest", "y_data": 1},
+{"x_data": "Bednar", "y_data": 1},
+{"x_data": "Bartoletti", "y_data": 1}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "last_name",
+"sort": {"op": "sum", "field": "y_data", "order": "descending"}
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "COUNT(last_name)"
+}
+}
+}
+
+#9
+vlSpec2 = {
+"data": {
+"values": [
+{
+"x_data": "ZIP drive",
+"y_data": 0,
+"classify": "Taiwan"
+},
+{
+"x_data": "Toner cartridge",
+"y_data": 0,
+"classify": "Tokyo"
+},
+{
+"x_data": "Printer",
+"y_data": 0,
+"classify": "Tokyo"
+},
+{
+"x_data": "Monitor",
+"y_data": 0,
+"classify": "Paris"
+},
+{
+"x_data": "Memory",
+"y_data": 0,
+"classify": "Paris"
+},
+{
+"x_data": "Hard drive",
+"y_data": 0,
+"classify": "Paris"
+},
+{
+"x_data": "Floppy disk",
+"y_data": 0,
+"classify": "Paris"
+},
+{
+"x_data": "DVD drive",
+"y_data": 180,
+"classify": "Beijing"
+},
+{
+"x_data": "DVD burner",
+"y_data": 180,
+"classify": "Beijing"
+},
+{
+"x_data": "CD drive",
+"y_data": 90,
+"classify": "Austin"
+},
+{
+"x_data": "ZIP drive",
+"y_data": 150,
+"classify": "Austin"
+},
+{
+"x_data": "Toner cartridge",
+"y_data": 66,
+"classify": "Los Angeles"
+},
+{
+"x_data": "Printer",
+"y_data": 270,
+"classify": "Los Angeles"
+},
+{
+"x_data": "Monitor",
+"y_data": 120,
+"classify": "Paris"
+},
+{
+"x_data": "Memory",
+"y_data": 5,
+"classify": "Paris"
+},
+{
+"x_data": "Hard drive",
+"y_data": 240,
+"classify": "Taiwan"
+},
+{
+"x_data": "Floppy disk",
+"y_data": 0,
+"classify": "Taiwan"
+},
+{
+"x_data": "DVD drive",
+"y_data": 0,
+"classify": "Taiwan"
+},
+{
+"x_data": "DVD burner",
+"y_data": 0,
+"classify": "Taiwan"
+},
+{
+"x_data": "CD drive",
+"y_data": 0,
+"classify": "Taiwan"
+}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "x_data",
+"type": "nominal",
+"title": "Name"
+},
+"y": {
+"field": "y_data",
+"type": "quantitative",
+"title": "Price"
+},
+"color": {
+"field": "classify",
+"type": "nominal",
+"title": "Headquarter",
+"scale": {
+"domain": [
+"Austin",
+"Beijing",
+"Los Angeles",
+"Paris",
+"Taiwan",
+"Tokyo"
+],
+"range": [
+"#8dd3c7",
+"#ffffb3",
+"#bebada",
+"#fb8072",
+"#80b1d3",
+"#fdb462"
+]
+}
+}
+},
+"config": {
+"view": {
+"stroke": "transparent"
+}
+}
+}
+
+#10
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"description": "A line chart showing the sum of budget in each year and bin creation time by year.",
+"data": {
+"url": {
+"index": "department_management",
+"resource": "department"
+}
+},
+"transform": [
+{
+"type": "aggregate",
+"groupby": [
+"Creation"
+],
+"aggregate": [
+{
+"op": "sum",
+"field": "Budget_in_Billions",
+"as": "sum_budget"
+}
+],
+"bin": {
+"field": "Creation",
+"step": 10
+}
+}
+],
+"mark": "line",
+"encoding": {
+"x": {
+"field": "Creation",
+"type": "temporal",
+"title": "Creation",
+"timeUnit": "year"
+},
+"y": {
+"field": "sum_budget",
+"type": "quantitative",
+"title": "Sum(Budget_in_Billions)"
+}
+}
+}
+
+#11
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"description": "A line chart showing the frequency of postseasons that the team Boston Red Stockings won, binned by year interval and sorted by year from low to high.",
+"data": {
+"url": {
+"index": "baseball_1",
+"resource": "postseason"
+}
+},
+"transform": [
+{
+"type": "filter",
+"expr": "datum.team_id_winner in teamIds && datum.team_name == 'Boston Red Stockings'"
+}
+],
+"params": [
+{
+"name": "teamIds",
+"value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+"bind": {
+"input": "select",
+"options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+}
+}
+],
+"transform": [
+{
+"type": "aggregate",
+"groupby": [
+"year"
+],
+"aggregate": [
+{
+"op": "count",
+"field": "year",
+"as": "count_year"
+}
+],
+"bin": {
+"field": "year",
+"step": 10
+}
+},
+{
+"type": "sort",
+"field": "year",
+"order": "ascending"
+}
+],
+"mark": "line",
+"encoding": {
+"x": {
+"field": "year",
+"type": "temporal",
+"title": "Year",
+"timeUnit": "year"
+},
+"y": {
+"field": "count_year",
+"type": "quantitative",
+"title": "Count(Year)"
+}
+}
+}
+
+#12
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"description": "A line chart showing the total number of times the team Boston Red Stockings won in the postseasons, binned by year interval and sorted by year from low to high.",
+"data": {
+"url": {
+"index": "baseball_1",
+"resource": "postseason"
+}
+},
+"transform": [
+{
+"type": "filter",
+"expr": "datum.team_id_winner in teamIds && datum.team_name == 'Boston Red Stockings'"
+}
+],
+"params": [
+{
+"name": "teamIds",
+"value": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+"bind": {
+"input": "select",
+"options": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+}
+}
+],
+"transform": [
+{
+"type": "aggregate",
+"groupby": [
+"year"
+],
+"aggregate": [
+{
+"op": "count",
+"field": "year",
+"as": "count_year"
+}
+],
+"bin": {
+"field": "year",
+"step": 10
+}
+},
+{
+"type": "aggregate",
+"groupby": [],
+"aggregate": [
+{
+"op": "sum",
+"field": "count_year",
+"as": "total_count"
+}
+]
+},
+{
+"type": "sort",
+"field": "year",
+"order": "ascending"
+}
+],
+"mark": "line",
+"encoding": {
+"x": {
+"field": "year",
+"type": "temporal",
+"title": "Year",
+"timeUnit": "year"
+},
+"y": {
+"field": "total_count",
+"type": "quantitative",
+"title": "Total(Count(Year))"
+}
+}
+}
+
+#13
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"data": {
+"url": {
+"index": "customers_and_products_contacts",
+"resource": "products"
+}
+},
+"transform": [
+{
+"filter": "datum.product_price > 1000 || datum.product_price < 500"
+},
+{
+"aggregate": [
+{
+"op": "count",
+"field": "product_name",
+"as": "count_product_name"
+}
+],
+"groupby": [
+"product_name"
+]
+},
+{
+"sort": [
+{
+"field": "product_name",
+"order": "ascending"
+}
+]
+}
+],
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "product_name",
+"type": "nominal",
+"title": "Product Name"
+},
+"y": {
+"field": "count_product_name",
+"type": "quantitative",
+"title": "Count(Product Name)"
+}
+}
+}
+
+#14
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"data": {
+"values": [
+{"x_data": "Books", "y_data": 4},
+{"x_data": "Clothes", "y_data": 2},
+{"x_data": "Electronics", "y_data": 4},
+{"x_data": "Food", "y_data": 5}
+]
+},
+"mark": "arc",
+"encoding": {
+"theta": {
+"field": "y_data",
+"type": "quantitative",
+"aggregate": "sum",
+"stack": None,
+"title": "COUNT(*)"
+},
+"color": {
+"field": "x_data",
+"type": "nominal",
+"title": "Product_Type_Code"
+}
+}
+}
+
+#15
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"data": {
+"url": {
+"index": "cre_Docs_and_Expenses",
+"resource": "Documents"
+}
+},
+"transform": [
+{
+"filter": "datum.project_id in projectIds && datum.project_details === 'Graph Database project'"
+},
+{
+"bin": {
+"field": "Document_Date",
+"bins": 7,
+"timeUnit": "weekday"
+},
+"aggregate": [
+{
+"op": "count",
+"field": "Document_Date",
+"as": "count_Document_Date"
+}
+],
+"groupby": [
+"_bin"
+]
+},
+{
+"calculate": "datum.Document_Date = null ? 'N/A' : DAYOFWEEK(datum.Document_Date)",
+"as": "Document_Date"
+},
+{
+"calculate": "'Weekday ' + FORMAT(datum.Document_Date, '%A')",
+"as": "Document_Date_Weekday"
+},
+{
+"calculate": "datum.count_Document_Date === null ? 0 : datum.count_Document_Date",
+"as": "count_Document_Date"
+},
+{
+"sort": [
+{
+"field": "count_Document_Date",
+"order": "descending"
+}
+]
+}
+],
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "Document_Date_Weekday",
+"type": "ordinal",
+"title": "Document_Date"
+},
+"y": {
+"field": "count_Document_Date",
+"type": "quantitative",
+"title": "COUNT(Document_Date)"
+}
+}
+}
+
+#16
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"data": {
+"url": {
+"index": "behavior_monitoring",
+"resource": "Student_Addresses"
+}
+},
+"transform": [
+{
+"calculate": "'apartment' + ' ' + datum.other_details",
+"as": "other_details_apartment"
+},
+{
+"calculate": "'house' + ' ' + datum.other_details",
+"as": "other_details_house"
+},
+{
+"bin": {
+"field": "date_address_from",
+"bins": 2,
+"timeUnit": "year"
+},
+"aggregate": [
+{
+"op": "sum",
+"field": "monthly_rental",
+"as": "sum_monthly_rental"
+}
+],
+"groupby": [
+"_bin",
+"other_details_apartment",
+"other_details_house"
+]
+},
+{
+"calculate": "datum.other_details_apartment = null ? 'N/A' : datum.other_details_apartment",
+"as": "other_details_apartment"
+},
+{
+"calculate": "datum.other_details_house = null ? 'N/A' : datum.other_details_house",
+"as": "other_details_house"
+},
+{
+"calculate": "'Year ' + FORMAT(datum._bin, '%Y')",
+"as": "date_address_from"
+},
+{
+"filter": "datum.sum_monthly_rental !== null"
+},
+{
+"sort": [
+{
+"field": "sum_monthly_rental",
+"order": "descending"
+}
+]
+}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "date_address_from",
+"type": "temporal",
+"title": "date_address_from"
+},
+"y": {
+"field": "sum_monthly_rental",
+"type": "quantitative",
+"title": "SUM(monthly_rental)"
+},
+"color": {
+"field": "other_details_apartment",
+"type": "nominal",
+"title": "other_details",
+"scale": {
+"domain": [
+"N/A",
+"apartment N/A",
+"apartment house"
+],
+"range": [
+"#F1E0E6",
+"#9E0142",
+"#D53E4F"
+]
+}
+},
+"row": {
+"field": "other_details_house",
+"type": "nominal",
+"title": "other_details"
+}
+}
+}
+
+#17
+vlSpec2 = {
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"data": {
+"url": {
+"index": "manufactory_1",
+"resource": "products"
+}
+},
+"transform": [
+{
+"joinaggregate": [
+{
+"op": "count",
+"field": "",
+"as": "count*"
+}
+],
+"groupby": [
+"Headquarter",
+"Name"
+]
+},
+{
+"joinaggregate": [
+{
+"op": "count",
+"field": "",
+"as": "count*"
+}
+],
+"groupby": [
+"Headquarter"
+]
+},
+{
+"calculate": "'Count: ' + FORMAT(datum.count*, ',.')",
+"as": "count_label"
+},
+{
+"calculate": "datum.Name = null ? 'N/A' : datum.Name",
+"as": "Name"
+},
+{
+"calculate": "datum.Headquarter = null ? 'N/A' : datum.Headquarter",
+"as": "Headquarter"
+},
+{
+"sort": [
+{
+"field": "Name",
+"order": "descending"
+}
+]
+}
+]
+},
+"mark": "bar",
+"encoding": {
+"x": {
+"field": "Name",
+"type": "nominal",
+"title": "Name"
+},
+"y": {
+"field": "count*",
+"type": "quantitative",
+"title": "Count*"
+},
+"color": {
+"field": "Headquarter",
+"type": "nominal",
+"title": "Headquarter",
+"scale": {
+"domain": [
+"N/A",
+"Austin",
+"Beijing",
+"Los Angeles",
+"Paris",
+"Taiwan",
+"Tokyo"
+],
+"range": [
+"#F1E0E6",
+"#9E0142",
+"#D53E4F",
+"#F781BF",
+"#C74C80",
+"#98FB98",
+"#7FFFD4"
+]
+}
+},
+"detail": {
+"field": "count_label",
+"type": "nominal",
+"title": "Count*"
+}
+}
+}
+
+#18
+vlSpec2 = {'data': {'values': [{'x\_data': 26, 'y\_data': 2, 'classify': 'Organizer'}, {'x\_data': 36, 'y\_data': 1, 'classify': 'Organizer'}, {'x\_data': 86, 'y\_data': 2, 'classify': 'Organizer'}, {'x\_data': 96, 'y\_data': 1, 'classify': 'Organizer'}, {'x\_data': 37, 'y\_data': 2, 'classify': 'Participant'}, {'x\_data': 60, 'y\_data': 1, 'classify': 'Participant'}, {'x\_data': 63, 'y\_data': 1, 'classify': 'Participant'}, {'x\_data': 64, 'y\_data': 1, 'classify': 'Participant'}, {'x\_data': 66, 'y\_data': 4, 'classify': 'Participant'}, {'x\_data': 90, 'y\_data': 3, 'classify': 'Participant'}]}, 'mark': 'point', 'encoding': {'x': {'field': 'x\_data', 'type': 'quantitative', 'title': 'Participant\_ID'}, 'y': {'field': 'y\_data', 'type': 'quantitative', 'title': 'count(*)'}, 'color': {'field': 'classify', 'type': 'nominal', 'title': 'Participant\_Type\_Code'}}}
+
+#19
+vlSpec2 = {'data': {'values': [{'x\_data': '1987-06-17', 'y\_data': 90}, {'x\_data': '1987-06-18', 'y\_data': 90}, {'x\_data': '1987-06-19', 'y\_data': 90}, {'x\_data': '1987-06-20', 'y\_data': 60}, {'x\_data': '1987-06-21', 'y\_data': 60}, {'x\_data': '1987-06-22', 'y\_data': 60}, {'x\_data': '1987-06-23', 'y\_data': 60}, {'x\_data': '1987-06-24', 'y\_data': 60}, {'x\_data': '1987-06-25', 'y\_data': 100}, {'x\_data': '1987-06-26', 'y\_data': 100}, {'x\_data': '1987-06-27', 'y\_data': 100}, {'x\_data': '1987-06-28', 'y\_data': 100}, {'x\_data': '1987-06-29', 'y\_data': 100}, {'x\_data': '1987-06-30', 'y\_data': 100}, {'x\_data': '1987-07-01', 'y\_data': 30}, {'x\_data': '1987-07-02', 'y\_data': 30}, {'x\_data': '1987-07-03', 'y\_data': 30}, {'x\_data': '1987-07-04', 'y\_data': 30}, {'x\_data': '1987-07-05', 'y\_data': 30}, {'x\_data': '1987-07-06', 'y\_data': 30}, {'x\_data': '1987-07-07', 'y\_data': 50}, {'x\_data': '1987-07-08', 'y\_data': 50}, {'x\_data': '1987-07-09', 'y\_data': 50}, {'x\_data': '1987-07-10', 'y\_data': 50}, {'x\_data': '1987-07-11', 'y\_data': 50}, {'x\_data': '1987-07-12', 'y\_data': 50}, {'x\_data': '1987-07-13', 'y\_data': 50}, {'x\_data': '1987-07-14', 'y\_data': 50}, {'x\_data': '1987-07-15', 'y\_data': 50}, {'x\_data': '1987-07-16', 'y\_data': 50}, {'x\_data': '1987-07-17', 'y\_data': 50}, {'x\_data': '1987-07-18', 'y\_data': 50}, {'x\_data': '1987-07-19', 'y\_data': 50}, {'x\_data': '1987-07-20', 'y\_data': 50}, {'x\_data': '1987-07-21', 'y\_data': 50}, {'x\_data': '1987-07-22', 'y\_data': 80}, {'x\_data': '1987-07-23', 'y\_data': 80}, {'x\_data': '1987-07-24', 'y\_data': 80}, {'x\_data': '1987-07-25', 'y
+
+#20
+vlSpec2 = {'data': {'values': [{'x\_data': '2001', 'y\_data': 2, 'classify': 'Fall'}, {'x\_data': '2002', 'y\_data': 9, 'classify': 'Fall'}, {'x\_data': '2003', 'y\_data': 6, 'classify': 'Fall'}, {'x\_data': '2004', 'y\_data': 3, 'classify': 'Fall'}, {'x\_data': '2005', 'y\_data': 4, 'classify': 'Fall'}, {'x\_data': '2006', 'y\_data': 8, 'classify': 'Fall'}, {'x\_data': '2007', 'y\_data': 6, 'classify': 'Fall'}, {'x\_data': '2008', 'y\_data': 1, 'classify': 'Fall'}, {'x\_data': '2009', 'y\_data': 7, 'classify': 'Fall'}, {'x\_data': '2010', 'y\_data': 5, 'classify': 'Fall'}, {'x\_data': '2001', 'y\_data': 3, 'classify': 'Spring'}, {'x\_data': '2002', 'y\_data': 4, 'classify': 'Spring'}, {'x\_data': '2003', 'y\_data': 6, 'classify': 'Spring'}, {'x\_data': '2004', 'y\_data': 4, 'classify': 'Spring'}, {'x\_data': '2005', 'y\_data': 4, 'classify': 'Spring'}, {'x\_data': '2006', 'y\_data': 5, 'classify': 'Spring'}, {'x\_data': '2007', 'y\_data': 6, 'classify': 'Spring'}, {'x\_data': '2008', 'y\_data': 9, 'classify': 'Spring'}, {'x\_data': '2009', 'y\_data': 2, 'classify': 'Spring'}, {'x\_data': '2010', 'y\_data': 6, 'classify': 'Spring'}]}, 'mark': 'line', 'encoding': {'x': {'field': 'x\_data', 'type': 'temporal', 'title': 'year', 'timeUnit': 'year'}, 'y': {'field': 'y\_data', 'type': 'quantitative', 'title': 'count(*)'}, 'color': {'field': 'classify', 'type': 'nominal', 'title': 'semester'}}}
+
